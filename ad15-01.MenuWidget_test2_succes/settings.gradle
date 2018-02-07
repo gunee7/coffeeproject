@@ -1,1 +1,1 @@
-include ':st1drawermenu', ':st2preference', ':st3toolbar'
+include ':st1drawermenu'

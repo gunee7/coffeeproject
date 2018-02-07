@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Administrator\\Desktop\\workspace\\Lecher\\Android\\Work\\part4.io\\ad15-01.MenuWidget_test2_succes\\st1drawermenu\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+            "outputFile": "C:\\Users\\Administrator\\Desktop\\ad15-01.MenuWidget_test2_succes\\st1drawermenu\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-b+sr+Latn\\values-b+sr+Latn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\4b5d8cc5757521f9c311beed80214f11\\res\\values-b+sr+Latn\\values.xml",

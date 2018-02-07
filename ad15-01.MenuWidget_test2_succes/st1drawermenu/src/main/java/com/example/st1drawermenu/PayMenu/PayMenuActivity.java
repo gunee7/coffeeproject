@@ -38,10 +38,9 @@ public class PayMenuActivity extends AppCompatActivity {
     private List<Tab2_Model_Card> Makedata( int start, int end ) {
 
         Tab2_Model_Card item = new Tab2_Model_Card();
-
+        datalist = new ArrayList<>();
         for (int i = start; i < end; i++ ){
             item = list.get(i);
-
             datalist.add(item);
         }
 
