@@ -1,13 +1,16 @@
---  -- coffeeproject 데이터베이스 생성
---  DROP DATABASE IF EXISTS coffeeproject;
---  
---  CREATE DATABASE coffeeproject DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
---  
---  
---  -- 사용자 추가
---  GRANT ALL ON coffeproject.* TO 'coffee1'@'%' IDENTIFIED BY '1234';
---  
---  FLUSH PRIVILEGES;
+-- -- coffeeproject 데이터베이스 생성
+-- DROP DATABASE IF EXISTS coffeeproject;
+-- 
+-- CREATE DATABASE coffeeproject DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- 
+-- 
+-- -- 사용자 추가
+-- create user 'coffee1'@'%' identified by '1234';  
+-- 
+-- -- 권한 허용
+-- GRANT ALL ON coffeproject.* TO 'coffee1'@'%' IDENTIFIED BY '1234';
+-- 
+-- FLUSH PRIVILEGES;
 
 -- 데이터베이스 변경
 USE coffeeproject;
