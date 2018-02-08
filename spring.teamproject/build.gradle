@@ -111,6 +111,9 @@ eclipse {
             facet name: "jst.web" , version: "2.5" // Servlet Spec Version 지정, 미 지정시 2.4
             facet name: "jst.java", version: "1.8" // Java Version 지정
         }
+        component {
+	       contextPath = '/'
+	    }
     }
     
     classpath {
