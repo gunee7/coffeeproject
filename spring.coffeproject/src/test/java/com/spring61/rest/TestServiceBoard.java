@@ -38,7 +38,7 @@ public class TestServiceBoard {
         org.apache.ibatis.jdbc.ScriptRunner runner = new org.apache.ibatis.jdbc.ScriptRunner(dataSource.getConnection());
         runner.setAutoCommit(true);
         runner.setStopOnError(true);
-        String sqlScriptFilePath = ClassLoader.getSystemClassLoader().getResource("java21/ddl/board.ddl.mysql.sql").getFile();
+        String sqlScriptFilePath = ClassLoader.getSystemClassLoader().getResource("java21/ddl/coffeeproject.sql").getFile();
         java.io.Reader br = new java.io.BufferedReader(new java.io.FileReader(sqlScriptFilePath ));
         runner.runScript( br);
         runner.closeConnection();
