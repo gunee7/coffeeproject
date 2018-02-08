@@ -5,10 +5,10 @@
 -- 
 -- 
 -- -- 사용자 추가
--- create user 'coffee1'@'%' identified by '1234';  
+-- create user 'coffee1'@'%' identified by '1234';
 -- 
 -- -- 권한 허용
--- GRANT ALL ON coffeproject.* TO 'coffee1'@'%' IDENTIFIED BY '1234';
+-- GRANT ALL ON coffeeproject.* TO 'coffee1'@'%' IDENTIFIED BY '1234';
 -- 
 -- FLUSH PRIVILEGES;
 
