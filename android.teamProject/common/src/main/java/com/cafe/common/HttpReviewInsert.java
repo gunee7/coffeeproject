@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 public class HttpReviewInsert {
 
     public Integer reviewinsert(Object cafeReview1) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/review/insertReview";
+        String weburl = "http://10.0.2.1:8080/review/insertReview";
 
         HttpRequest request = null;
         String response = null;

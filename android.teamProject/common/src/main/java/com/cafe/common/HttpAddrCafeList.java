@@ -16,7 +16,7 @@ import java.util.List;
 public class HttpAddrCafeList {
 
     public List<ModelCafeinfo> addr(String addr){
-        String weburl = "http://dbqudtjd1122.cafe24.com/team/getCafeListAddr";
+        String weburl = "http://10.0.2.1:8080/team/getCafeListAddr";
 
         HttpRequest request = null;
         JSONArray response = null;

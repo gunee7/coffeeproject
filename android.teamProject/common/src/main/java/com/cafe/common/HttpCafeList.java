@@ -19,7 +19,7 @@ public class HttpCafeList {
 
 
     public List<ModelCafeinfo> itemlist(ModelCafeinfo obj, String orderKind) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/team/getcafelist";
+        String weburl = "http://10.0.2.1:8080/team/getcafelist";
 
         HttpRequest request = null;
         JSONArray response = null;

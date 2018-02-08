@@ -132,7 +132,7 @@ public class LoginActivity extends CommonActvity {
     }
 
     public ModelUser login(String id, String pw) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/team/login";
+        String weburl = "http://10.0.2.1:8080/team/login";
 
         HttpRequest request = null;
         JSONObject response = null;

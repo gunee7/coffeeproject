@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 public class HttpReviewUpdate {
 
     public Integer reviewupdate(Object cafeReview1) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/review/updateReview";
+        String weburl = "http://10.0.2.1:8080/review/updateReview";
 
         HttpRequest request = null;
         String response = null;

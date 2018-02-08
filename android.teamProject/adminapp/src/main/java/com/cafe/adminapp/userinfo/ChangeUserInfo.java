@@ -125,7 +125,7 @@ public class ChangeUserInfo extends AppCompatActivity {
     }
 
     public String changeuserinfo(String email,  String passwd, String userphone, String addr, String sex, String nickname, String selectEmail){
-        String weburl = "http://dbqudtjd1122.cafe24.com/user/updateUserInfo";
+        String weburl = "http://10.0.2.1:8080/user/updateUserInfo";
 
         HttpRequest request = null;
         String response = null;

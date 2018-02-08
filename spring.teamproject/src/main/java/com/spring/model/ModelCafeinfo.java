@@ -2,9 +2,6 @@ package com.spring.model;
 
 import java.io.Serializable;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 public class ModelCafeinfo implements Serializable {
     
      private Integer cafeno;

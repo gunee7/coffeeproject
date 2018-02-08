@@ -151,7 +151,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public String insert(String email, String pw, String phone, String addr, String sex, Integer checkemail, String nickname ){
-        String weburl = "http://dbqudtjd1122.cafe24.com/team/insertuser";
+        String weburl = "http://10.0.2.1:8080/team/insertuser";
 
         HttpRequest request = null;
         String response = null;
