@@ -878,17 +878,17 @@ public final class R {
         public static final int title_template = 0x7f090133;
         public static final int top = 0x7f090137;
         public static final int topPanel = 0x7f090138;
-        public static final int touch_outside = 0x7f090139;
-        public static final int transition_current_scene = 0x7f09013a;
-        public static final int transition_layout_save = 0x7f09013b;
-        public static final int transition_position = 0x7f09013c;
-        public static final int transition_scene_layoutid_cache = 0x7f09013d;
-        public static final int transition_transform = 0x7f09013e;
-        public static final int uniform = 0x7f09013f;
-        public static final int up = 0x7f090140;
-        public static final int view_offset_helper = 0x7f090143;
-        public static final int visible = 0x7f090144;
-        public static final int wrap_content = 0x7f090148;
+        public static final int touch_outside = 0x7f09013a;
+        public static final int transition_current_scene = 0x7f09013b;
+        public static final int transition_layout_save = 0x7f09013c;
+        public static final int transition_position = 0x7f09013d;
+        public static final int transition_scene_layoutid_cache = 0x7f09013e;
+        public static final int transition_transform = 0x7f09013f;
+        public static final int uniform = 0x7f090140;
+        public static final int up = 0x7f090141;
+        public static final int view_offset_helper = 0x7f090144;
+        public static final int visible = 0x7f090145;
+        public static final int wrap_content = 0x7f090149;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;
