@@ -9,6 +9,12 @@
                 android:id="@+id/nav_login"
                 android:icon="@android:drawable/btn_radio"
                 android:title="@string/drawer_menu_login"/>
+    
+            <item
+                android:id="@+id/nav_login_spring"
+                android:icon="@android:drawable/btn_radio"
+                android:title="@string/drawer_menu_login_spring"/>
+            
             <item
                 android:id="@+id/nav_register"
                 android:icon="@android:drawable/ic_dialog_info"
