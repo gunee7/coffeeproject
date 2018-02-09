@@ -28,6 +28,7 @@ import com.example.st1drawermenu.Fragment.Tab4Fragment;
 import com.example.st1drawermenu.LoginPackage.CommonCode;
 import com.example.st1drawermenu.LoginPackage.LoginActivity;
 import com.example.st1drawermenu.LoginPackage.RegisterActivity;
+import com.example.st1drawermenu.LoginPackageSpring.LoginSpringActivity;
 import com.example.st1drawermenu.PayMenu.PayMenuActivity;
 
 public class MainActivity extends AppBarMainActivity
@@ -115,8 +116,6 @@ public class MainActivity extends AppBarMainActivity
             }
         });
 
-
-
         cart = findViewById(R.id.cart);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,17 +185,13 @@ public class MainActivity extends AppBarMainActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_login) {
-            // Context 얻는 3가지 방법.
-            // 1. getApplicationContext()
-            // 2. getContext()
-            // 3. MainActivity.this
-
             // 새창 띄우기
             Intent i = new Intent( /* context */ MainActivity.this  ,  /* class 이름 */ LoginActivity.class);
             startActivityForResult( i, REQUEST_CODE_LOGIN );
 
-        } else if (id == R.id.nav_logout) {
-            setShowHideNavigation( false );
+        } else if (id == R.id.nav_login_spring) {
+            Intent i = new Intent( MainActivity.this , LoginSpringActivity.class);
+            startActivity( i );
         }
         else if (id == R.id.nav_register) {
             // 새창 띄우기

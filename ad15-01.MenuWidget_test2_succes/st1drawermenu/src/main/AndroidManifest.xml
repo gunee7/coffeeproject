@@ -26,7 +26,7 @@
         <activity android:name=".Intro.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
+    
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -41,6 +41,8 @@
         <activity android:name=".AppBar.SearchActivity">
         </activity>
         <activity android:name=".Cart.CartActivity">
+        </activity>
+        <activity android:name=".LoginPackageSpring.LoginSpringActivity">
         </activity>
     </application>
 
