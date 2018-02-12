@@ -49,7 +49,6 @@
 **/Servers/
 **/RemoteSystemsTempFiles
 
-**/spring00.docs/책-*
 # Local configuration file (sdk path, etc)
 local.properties
 
@@ -75,7 +74,6 @@ ignore-file.txt
 
 # Compiled source  제외
 ###################
-*.com
 *.class
 *.dll
 *.exe
