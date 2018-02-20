@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.content.Intent;
@@ -121,7 +122,10 @@ public class Tab2Fragment extends Fragment {
                 ImageView btn_minus = dialogView.findViewById( R.id.btn_minus );
                 ImageView btn_plus  = dialogView.findViewById( R.id.btn_plus  );
                 Button    btn_go_cart = dialogView.findViewById( R.id.btn_go_cart  );
+                Button    coffeepaySizwupText = dialogView.findViewById( R.id.coffeepaySizwupText  );
                 final EditText  count_number =  dialogView.findViewById( R.id.count_number  );
+                final CheckBox checkBox =  dialogView.findViewById( R.id.checkbox  );
+
                 //마이너스 해주는것
                 btn_minus.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -152,17 +156,24 @@ public class Tab2Fragment extends Fragment {
                 name.setText( model.getTextCoffee() );
                 price.setText( model.getTextPrice() );
 
+                int smallprice = Integer.valueOf(price.getText().toString());
+                final int bigprice = smallprice + 500;
+                coffeepaySizwupText.setText( bigprice + "");
+
                 builder.setView(dialogView);
 
                 btn_go_cart.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         model.setCountCoffee( count_number.getText().toString() );
+                        if (checkBox.isChecked()) {
+                            model.setTextPrice(bigprice + "");
+                        }
                         list.add( model );
                         Toast.makeText(getContext(),"들어갔습니다.",Toast.LENGTH_SHORT).show();
                     }
                 });
-                builder.setPositiveButton("결제하러 가기", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("결제하기", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent i = new Intent( getContext() , CartActivity.class);
