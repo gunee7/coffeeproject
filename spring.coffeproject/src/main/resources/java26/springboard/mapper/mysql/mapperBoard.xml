@@ -42,7 +42,7 @@
                     SELECT 
                         boardcd, boardnm, UseYN
                     FROM 
-                        TB_BBS_Board
+                        TB_Bbs_Board
                     WHERE 1 = 1
                         <if test="searchWord != null and searchWord != ''">
                         AND boardnm LIKE CONCAT( '%' , #{searchWord} , '%' )  
@@ -109,7 +109,7 @@
     </delete>
     
     <select id="getArticleTotalRecord" parameterType="java.util.Map" resultType="int">
-        SELECT count(*) FROM TB_BBS_Article 
+        SELECT count(*) FROM TB_Bbs_Article 
          WHERE boardcd = #{boardcd}
             <if test="searchWord != null and searchWord != ''">
             AND ( title LIKE CONCAT('%', #{searchWord}, '%') OR content LIKE CONCAT('%', #{searchWord}, '%') ) 
@@ -129,9 +129,9 @@
                          , count(distinct(c.commentno)) commentNum
                          , m.name
                     FROM 
-                        TB_BBS_Article a
-                        LEFT OUTER JOIN TB_BBS_Attachfile f ON a.articleno = f.articleno
-                        LEFT OUTER JOIN TB_BBS_Comments   c ON a.articleno = c.articleno
+                        TB_Bbs_Article a
+                        LEFT OUTER JOIN TB_Bbs_AttachFile f ON a.articleno = f.articleno
+                        LEFT OUTER JOIN TB_Bbs_Comments   c ON a.articleno = c.articleno
                         LEFT OUTER JOIN TB_User           m ON a.insertUID = m.userid
                     WHERE
                         a.boardcd = #{boardcd}
@@ -148,18 +148,18 @@
     
     <select id="getArticle" parameterType="int" resultType="ModelArticle">
         SELECT articleno, boardcd, title, content, email, hit, regdate
-        FROM TB_BBS_Article
+        FROM TB_Bbs_Article
         WHERE articleno = #{articleno}
     </select>
     
     <insert id="insertArticle" parameterType="ModelArticle" useGeneratedKeys="true" keyProperty="articleno" >
         INSERT INTO 
-        TB_BBS_Article ( boardcd   , title   , content   , email   , hit, regdate, InsertUID   , InsertDT   , UpdateUID   , UpdateDT     )
+        TB_Bbs_Article ( boardcd   , title   , content   , email   , hit, regdate, InsertUID   , InsertDT   , UpdateUID   , UpdateDT     )
             VALUES     ( #{boardcd}, #{title}, #{content}, #{email}, 0  , now()  , #{InsertUID}, #{InsertDT}, #{UpdateUID}, #{UpdateDT}  )
     </insert>   
     
     <update id="updateArticle" parameterType="java.util.Map">
-        UPDATE TB_BBS_Article  
+        UPDATE TB_Bbs_Article  
            <set>
                 <if test=" setValue.title     != null and setValue.title   !='' "> title     = #{setValue.title    } , </if>
                 <if test=" setValue.content   != null and setValue.content !='' "> content   = #{setValue.content  } , </if>
@@ -186,7 +186,7 @@
     </update>
     
     <delete id="deleteArticle" parameterType="ModelArticle">
-        DELETE FROM TB_BBS_Article 
+        DELETE FROM TB_Bbs_Article 
          WHERE 1 = 1 
           <if test="articleno != null and articleno != ''" >
           AND articleno = #{articleno}
@@ -203,7 +203,7 @@
     </delete>
     
     <update id="increaseHit" parameterType="int">
-        UPDATE TB_BBS_Article 
+        UPDATE TB_Bbs_Article 
            SET hit=hit+1 
          WHERE articleno=#{articleno}
     </update>
@@ -215,7 +215,7 @@
             SELECT @RNUM := @RNUM + 1 AS r, a.*
             FROM
                 (SELECT articleno, title 
-                   FROM TB_BBS_Article 
+                   FROM TB_Bbs_Article 
                   WHERE boardcd      =    #{boardcd} 
                     AND articleno   &gt;  #{articleno}
                     <if test=" searchWord != null and searchWord != '' ">
@@ -234,7 +234,7 @@
             SELECT @RNUM := @RNUM + 1 AS r, a.*
             FROM
                 (SELECT articleno, title 
-                   FROM TB_BBS_Article 
+                   FROM TB_Bbs_Article 
                   WHERE boardcd     =    #{boardcd} 
                     AND articleno  &lt;  #{articleno}
                     <if test="searchWord != null and searchWord != ''">
@@ -248,25 +248,25 @@
 
     <select id="getAttachFile" parameterType="int" resultType="ModelAttachFile">
         SELECT attachfileno, filenameorig, filenametemp, filetype, filesize, articleno
-          FROM TB_BBS_Attachfile
+          FROM TB_Bbs_AttachFile
          WHERE attachfileno = #{attachFileNo}
     </select>
     
     <select id="getAttachFileList" parameterType="int" resultType="ModelAttachFile">
         SELECT attachfileno, filenameorig, filenametemp, filetype, filesize, articleno 
-          FROM TB_BBS_Attachfile 
+          FROM TB_Bbs_AttachFile 
          WHERE articleno = #{articleno} 
         ORDER BY attachfileno
     </select>
     
     <insert id="insertAttachFile" parameterType="ModelAttachFile" useGeneratedKeys="true" keyProperty="attachfileno" >
         INSERT INTO 
-        TB_BBS_Attachfile (filenameorig,    filenametemp, filetype, filesize, articleno, InsertUID   , InsertDT   , UpdateUID   , UpdateDT    )
+        TB_Bbs_AttachFile (filenameorig,    filenametemp, filetype, filesize, articleno, InsertUID   , InsertDT   , UpdateUID   , UpdateDT    )
         VALUES        ( #{filenameorig}, #{filenametemp}, #{filetype}, #{filesize}, #{articleno}, #{InsertUID}, #{InsertDT}, #{UpdateUID}, #{UpdateDT} )
     </insert>
     
     <delete id="deleteAttachFile" parameterType="ModelAttachFile">
-        DELETE FROM TB_BBS_Attachfile          
+        DELETE FROM TB_Bbs_AttachFile          
          WHERE 1 = 1 
           <if test="attachfileno != null " >
           AND attachfileno = #{attachfileno}
@@ -282,13 +282,13 @@
     
     <select id="getComment" parameterType="int" resultType="ModelComments">
         SELECT commentno,articleno,email,memo,regdate 
-        FROM TB_BBS_Comments 
+        FROM TB_Bbs_Comments 
         WHERE commentno = #{commentNo}
     </select>
     
     <select id="getCommentList" parameterType="int" resultType="ModelComments">
         SELECT commentno, articleno, email, memo, regdate
-        FROM TB_BBS_Comments
+        FROM TB_Bbs_Comments
         WHERE articleno = #{articleno}
         ORDER BY commentno DESC
     </select>
@@ -296,12 +296,12 @@
     
     <insert id="insertComment" parameterType="ModelComments" 
                      useGeneratedKeys="true" keyProperty="commentno" >
-        INSERT INTO TB_BBS_Comments (   articleno ,   email ,   memo , regdate, InsertUID   , InsertDT   , UpdateUID   , UpdateDT    )
+        INSERT INTO TB_Bbs_Comments (   articleno ,   email ,   memo , regdate, InsertUID   , InsertDT   , UpdateUID   , UpdateDT    )
                              VALUES ( #{articleno}, #{email}, #{memo}, now()  , #{InsertUID}, #{InsertDT}, #{UpdateUID}, #{UpdateDT} )
     </insert>
     
     <update id="updateComment" parameterType="java.util.Map">
-        UPDATE TB_BBS_Comments 
+        UPDATE TB_Bbs_Comments 
            <set>
                 <if test=" setValue.memo      != null and setValue.memo !='' "> memo      = #{setValue.memo     } , </if>
                 <if test=" setValue.regdate   != null                        "> regdate   = #{setValue.regdate  } , </if>
@@ -322,7 +322,7 @@
     </update>
     
     <delete id="deleteComment" parameterType="ModelComments">
-        DELETE FROM TB_BBS_Comments 
+        DELETE FROM TB_Bbs_Comments 
         WHERE 1 = 1 
           <if test="commentno != null and commentno != ''" >
           AND commentno = #{commentno}
