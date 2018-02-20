@@ -1,8 +1,11 @@
 package com.example.st1drawermenu.Cart;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -53,12 +56,9 @@ public class CartActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( /* context */ CartActivity.this  ,  /* class 이름 */ MainActivity.class);
-                i.putExtra(GO_COFFEE,0);
-                startActivity ( i );
+                finish();
             }
         });
-
 
         btn_barket = findViewById( R.id.btn_barket );
         btn_barket.setOnClickListener(new View.OnClickListener() {
@@ -75,8 +75,7 @@ public class CartActivity extends AppCompatActivity {
         btn_menuadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( /* context */ CartActivity.this  ,  /* class 이름 */ MainActivity.class);
-                startActivity ( i );
+                finish();
             }
         });
 
@@ -91,6 +90,25 @@ public class CartActivity extends AppCompatActivity {
         textprice = findViewById( R.id.textprice );
         textprice.setText( total + "");
 
+        cartListview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder( CartActivity.this );
+                builder.setTitle("삭제하시겠습니까??");
+                builder.setMessage("정말로??");
+                builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        data.remove( position );
+                        cartAdapter.notifyDataSetChanged();
+                    }
+                });
+                builder.setNegativeButton("취소",null);
+                builder.show();
+                return false;
+            }
+        });
 
     }
 
