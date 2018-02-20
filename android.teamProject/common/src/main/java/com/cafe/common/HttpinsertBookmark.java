@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 public class HttpinsertBookmark {
 
     public int insertBookmark(ModelCafeLike like){
-        String weburl = "http://dbqudtjd1122.cafe24.com/like/insertBookmark";
+        String weburl = "http://10.0.2.1:8080/like/insertBookmark";
 
         HttpRequest request = null;
         String response = null;

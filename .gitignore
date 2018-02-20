@@ -27,7 +27,6 @@
 **/out/
 **/captures/
 **/gradle/
-**/log*/
 **/target/
 
 **/dist/
@@ -50,7 +49,6 @@
 **/Servers/
 **/RemoteSystemsTempFiles
 
-**/spring00.docs/책-*
 # Local configuration file (sdk path, etc)
 local.properties
 
@@ -62,21 +60,6 @@ ignore-file.txt
 
 # Log Files : 와일드카드도 사용가능
 *.log
-
-# 무시된 디렉토리 안의 특정 파일과 폴더만 추가하는 방법
-#!JavaApplication/src/main/java/
-#JavaApplication/src/main/java/*
-#!JavaApplication/src/main/java/java24/
-
-#!JavaApplication/src/main/resources/
-#JavaApplication/src/main/resources/*
-#!JavaApplication/src/main/resources/*.xml
-#!JavaApplication/src/main/resources/*.properties
-#!JavaApplication/src/main/resources/java24/
-
-#!JavaApplication/src/test/java/
-#JavaApplication/src/test/java/*
-#!JavaApplication/src/test/java/java24/
 
 # Intellij
 *.iml
@@ -91,7 +74,6 @@ ignore-file.txt
 
 # Compiled source  제외
 ###################
-*.com
 *.class
 *.dll
 *.exe

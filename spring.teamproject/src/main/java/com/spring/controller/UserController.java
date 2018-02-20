@@ -24,7 +24,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.spring.model.ModelUser;
 import com.spring.service.IServiceUser;
 
-import android.service.textservice.SpellCheckerService.Session;
 
 /**
  * Handles requests for the application home page.

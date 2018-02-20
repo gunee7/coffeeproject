@@ -73,9 +73,12 @@
     
     <Button
         android:id="@+id/btn_pay"
+        android:background="@null"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/gridView"/>
+        android:layout_alignBottom="@+id/gridView"
+        android:text="계산서 보러가기"
+        android:textColor="#ff0000"/>
 
 
 </RelativeLayout>

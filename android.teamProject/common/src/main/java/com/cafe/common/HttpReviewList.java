@@ -16,7 +16,7 @@ import java.util.List;
 public class HttpReviewList {
 
     public List<ModelCafeReview> reviewlist(Integer cafeno) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/review/getReviewList";
+        String weburl = "http://10.0.2.1:8080/review/getReviewList";
 
         HttpRequest request = null;
         JSONArray response = null;

@@ -16,7 +16,7 @@ import java.util.List;
 public class HttpCafeMenuList {
 
     public List<String> Menulist(String brand) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/menu/getCafecd";
+        String weburl = "http://10.0.2.1:8080/menu/getCafecd";
 
         HttpRequest request = null;
         JSONArray response = null;
@@ -53,7 +53,7 @@ public class HttpCafeMenuList {
     }
 
     public List<ModelCafeMenu> Menulist2(String menucd, String brand) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/menu/getCafeMenu";
+        String weburl = "http://10.0.2.1:8080/menu/getCafeMenu";
 
         HttpRequest request = null;
         JSONArray response = null;

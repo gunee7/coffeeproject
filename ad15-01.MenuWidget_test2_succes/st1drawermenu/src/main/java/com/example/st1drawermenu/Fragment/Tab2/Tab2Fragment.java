@@ -111,8 +111,6 @@ public class Tab2Fragment extends Fragment {
                 Tab2_Model_Card item = new Tab2_Model_Card();
                 item.setTextCoffee(datas.getTextCoffee());
                 item.setPayCoffee(datas.getPayCoffee());
-                item.setPositionCoffee(String.valueOf(position));
-
                 list.add(item);
             }
         });

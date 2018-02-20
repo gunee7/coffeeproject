@@ -100,7 +100,7 @@ public class IDPW_Search extends AppCompatActivity {
 
 
     public ModelUser getemail(String phone) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/team/selectid";
+        String weburl = "http://10.0.2.1:8080/team/selectid";
 
         HttpRequest request = null;
         String response = null;
@@ -168,7 +168,7 @@ public class IDPW_Search extends AppCompatActivity {
     }
 
     public ModelUser getpw(String useremail) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/team/selectpwd";
+        String weburl = "http://10.0.2.1:8080/team/selectpwd";
 
         HttpRequest request = null;
         String response = null;

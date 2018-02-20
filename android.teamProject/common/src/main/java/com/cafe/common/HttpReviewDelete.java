@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 public class HttpReviewDelete {
 
     public Integer reviewdelete(ModelCafeReview cafeReview) {
-        String weburl = "http://dbqudtjd1122.cafe24.com/review/deleteReview";
+        String weburl = "http://10.0.2.1:8080/review/deleteReview";
 
         HttpRequest request = null;
         String response = null;

@@ -100,7 +100,7 @@ public class DeleteUser extends AppCompatActivity {
     }
 
     public String deleteuser(String email){
-        String weburl = "http://dbqudtjd1122.cafe24.com/user/deleteUser";
+        String weburl = "http://10.0.2.1:8080/user/deleteUser";
 
         HttpRequest request = null;
         String response = null;

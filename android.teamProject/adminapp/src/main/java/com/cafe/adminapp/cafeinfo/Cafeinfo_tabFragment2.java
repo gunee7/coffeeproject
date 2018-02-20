@@ -99,7 +99,7 @@ public class Cafeinfo_tabFragment2 extends CafeinfoFragment {
     }
 
     public ModelCafeinfo getcafeone(String cafeno){
-        String weburl = "http://dbqudtjd1122.cafe24.com/team/getCafeOne";
+        String weburl = "http://10.0.2.1:8080/team/getCafeOne";
 
         HttpRequest request = null;
         JSONObject response = null;
