@@ -181,7 +181,7 @@ public class Tab2Fragment extends Fragment {
                         startActivity( i );
                     }
                 });
-                builder.setNegativeButton("닫기",null);
+                builder.setNegativeButton("메뉴추가",null);
 
                 builder.show();
 
