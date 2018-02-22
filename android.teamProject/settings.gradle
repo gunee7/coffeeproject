@@ -1,1 +1,0 @@
-include ':adminapp', ':common', ':ownerapp', ':userapp'
